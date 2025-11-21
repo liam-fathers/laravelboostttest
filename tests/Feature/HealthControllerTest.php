@@ -29,8 +29,8 @@ class HealthControllerTest extends TestCase
     public function test_health_endpoint_returns_valid_timestamp(): void
     {
         $response = $this->getJson('/api/health');
-
         $response->assertOk();
+        
         $timestamp = $response->json('timestamp');
 
         $this->assertNotNull($timestamp);

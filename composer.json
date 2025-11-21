@@ -11,6 +11,7 @@
         "laravel/tinker": "^2.10.1"
     },
     "require-dev": {
+        "brianium/paratest": "^7.8",
         "fakerphp/faker": "^1.23",
         "laravel/boost": "^1.8",
         "laravel/pail": "^1.2.2",
@@ -67,7 +68,11 @@
         ],
         "pre-package-uninstall": [
             "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
-        ]
+        ],
+        "rector": [
+            "vendor/bin/rector process app --autoload-file vendor/autoload.php",
+            "vendor/bin/rector process tests --autoload-file vendor/autoload.php"
+        ]   
     },
     "extra": {
         "laravel": {
