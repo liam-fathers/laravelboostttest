@@ -1,0 +1,9 @@
+node_modules/
+vendor/
+storage/
+bootstrap/cache/
+.env.local
+*.log
+.git/
+dist/
+build/
