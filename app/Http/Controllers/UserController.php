@@ -20,4 +20,14 @@ class UserController extends Controller
 
         return response()->json($users);
     }
+
+    /**
+     * Retrieve a single user by ID.
+     */
+    public function show(User $user): JsonResponse
+    {
+        return response()->json(
+            $user->only(['id', 'name', 'email', 'created_at'])
+        );
+    }
 }
